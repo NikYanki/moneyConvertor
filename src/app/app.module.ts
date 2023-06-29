@@ -1,24 +1,36 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './components/app.component';
-import { ExchangeRatesComponent } from './components/exchange-rates/exchange-rates.component';
-import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
-import { HeaderComponent } from './components/header/header.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+import {LayoutComponent} from './layout/layout/layout.component';
+import {
+  AppComponent,
+  ConvertorFromUAHComponent,
+  ConvertorInUahComponent,
+  ExchangeRateComponent,
+  ExchangeRatesComponent,
+  HeaderComponent
+} from "./components";
 
 @NgModule({
   declarations: [
     AppComponent,
     ExchangeRatesComponent,
     ExchangeRateComponent,
-    HeaderComponent
+    HeaderComponent,
+    LayoutComponent,
+    ConvertorInUahComponent,
+    ConvertorFromUAHComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

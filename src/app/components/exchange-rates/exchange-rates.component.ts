@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {IExchange} from "../../interfaces";
-import {ExchangeService} from "../../services";
+
+import {IExchange} from '../../interfaces';
+import {ExchangeService} from '../../services';
 
 @Component({
   selector: 'app-exchange-rates',
@@ -8,12 +9,13 @@ import {ExchangeService} from "../../services";
   styleUrls: ['./exchange-rates.component.css']
 })
 export class ExchangeRatesComponent implements OnInit {
-  exchangeRates: IExchange[]
+  exchangeRates: IExchange[];
 
   constructor(private exchangeService: ExchangeService) {
-  }
+  };
 
   ngOnInit() {
-    this.exchangeService.getAll().then(value => this.exchangeRates =value)
-  }
+    this.exchangeService.getAll().subscribe(value => this.exchangeRates = value)
+  };
 }
+

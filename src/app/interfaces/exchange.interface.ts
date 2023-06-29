@@ -1,7 +1,6 @@
 export interface IExchange {
-  r030: number
-  txt: string
-  rate: number
+  r030: number,
+  txt: string,
+  rate: number,
   cc: string
-  exchangedate: string
 }

@@ -1,7 +1,8 @@
-import {Injectable, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {IExchange} from "../interfaces";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+
+import {IExchange} from '../interfaces';
 import {urls} from "../constants";
 
 @Injectable({
@@ -9,11 +10,11 @@ import {urls} from "../constants";
 })
 export class ExchangeService{
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  getAll(): Promise<IExchange[]> {
-    return  fetch(urls.exchange).then(value => value.json())
-  }
+  getAll(): Observable<IExchange[]> {
+    return  this.httpClient.get<IExchange[]>(urls.exchange)
+  };
 
 }

@@ -1,0 +1,31 @@
+.block{
+  height: 70px;
+  width:100%;
+  background: #6868ea;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.runString{
+  position: relative;
+  width: 6000px;
+  display: flex;
+  flex-direction: row;
+  text-align:center;
+  color:#fff;
+  text-transform: uppercase;
+  animation: text 70s infinite linear;
+  padding-left: 100%;
+  white-space: nowrap;
+  align-items: center;
+}
+
+@keyframes text {
+  0%{
+    transform: translate(0, 0);
+  }
+
+  100%{
+    transform: translate(-200%, 0);
+  }
+}
