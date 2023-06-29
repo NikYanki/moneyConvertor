@@ -1,0 +1,24 @@
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+  <h2>Currency conversion from UAH </h2>
+
+  <div>
+    <div>
+
+      <input type="number" placeholder="quantity" (input)="order()" (keyup)="change($event)">
+      <select formControlName="convertor" (change)="order()">
+        <option [ngValue]="null" disabled>UAH</option>
+        <option *ngFor="let exchangeRate of exchangeRates" [ngValue]="exchangeRate">{{exchangeRate.cc}}</option>
+      </select>
+
+    </div>
+    <div class="answer">
+
+      <button type="submit"> change</button>
+      <p>in {{cc}}: {{sum}}</p>
+
+    </div>
+  </div>
+
+
+</form>
+
